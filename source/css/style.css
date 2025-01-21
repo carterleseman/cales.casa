@@ -1,0 +1,176 @@
+:root {
+    --background: #008080;
+}
+
+@media print {
+    .desktop,
+    .window,
+    .window-body {
+        all: unset !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    .menu-bar,
+    .title-bar,
+    .taskbar,
+    .window:has(.title-bar.inactive) {
+        display: none !important;
+    }
+
+    .window-body pre {
+        box-shadow: none !important;
+    }
+}
+
+* {
+    image-rendering: pixelated;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .window {
+        width: 100%;
+        height: 100%;
+        position: unset !important;
+        top: unset !important;
+        left: unset !important;
+        min-width: unset !important;
+        transform: unset !important;
+    }
+
+    .window-body {
+        height: 100%;
+    }
+
+    .window-body pre {
+        height: 100%;
+    }
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+
+body::after {
+    position: fixed;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(transparent 50%, #fff 50%),
+    linear-gradient(90deg, red, red 33%, #0f0 33%, #0f0 66%, #00f 66%);
+    background-size: 100% 3px, 3px 3px;
+    pointer-events: none;
+    opacity: .06;
+    z-index: 90;
+}
+
+@supports (zoom: 150%) {
+    body.zoom {
+        zoom: 150%;
+    }
+}
+
+@font-face {
+    font-family: 'W95font';
+    src: url('../fonts/w95font.woff') format('woff');
+    src: url('../fonts/w95font.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'W95font';
+    src: url('../fonts/w95font-bold.woff') format('woff');
+    src: url('../fonts/w95font-bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.desktop {
+    background: var(--background);
+    display: flex;
+    height: 100%;
+}
+
+.taskbar {
+    background: var(--surface);
+    box-shadow: inset 1px 1px #fff;
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    font-size: 12px;
+}
+
+#taskbar-start {
+    font-weight: bold;
+    min-width: auto;
+    padding: 0 6px;
+}
+
+#taskbar-start-icon {
+    vertical-align: bottom;
+}
+
+#taskbar-time {
+    margin: 0;
+    padding: 2px 10px;
+}
+
+.content,
+.taskbar {
+    font-family: 'W95font', 'Arial';
+}
+
+.taskbar,
+.title-bar,
+.menu-bar,
+[role=tablist] {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 67.5%;
+    min-width: max-content;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.title-bar-icon {
+    vertical-align: bottom;
+}
+
+.scrollable {
+    overflow: auto;
+}
+
+pre {
+    text-align: center;
+}
+
+[role=tabpanel] pre {
+    text-align: left;
+}

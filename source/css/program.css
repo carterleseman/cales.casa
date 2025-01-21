@@ -1,0 +1,121 @@
+@media print {
+    .programs {
+        display: none !important;
+    }
+}
+
+.programs {
+    --program-height: 75px;
+    --program-rows: 11;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+}
+
+@media (max-height: 1440px) {
+    .programs {
+        --program-rows: 10;
+    }
+}
+
+@media (max-height: 1200px) {
+    .programs {
+        --program-rows: 9;
+    }
+}
+
+@media (max-height: 1080px) {
+    .programs {
+        --program-rows: 8;
+    }
+}
+
+@media (max-width: 768px) {
+    .programs {
+        display: none;
+    }
+}
+
+.program {
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    position: absolute;
+    margin: 5px;
+    width: 75px;
+    height: 75px;
+}
+
+.program {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.program {
+    font-family: 'W95font', 'Arial';
+}
+
+.program.shortcut .program-icon-container::after {
+    position: absolute;
+    left: 0;
+    content: url('../ico/shortcut.webp');
+}
+
+@supports (zoom: 150%) {
+    body.zoom .program.shortcut .program-icon-container::after {
+        transform: scale(0.67);
+        transform-origin: left top;
+    }
+}
+
+.program.active {
+    z-index: 1;
+}
+
+.program.active .program-text {
+    display: block;
+    background: var(--dialog-blue);
+    outline: var(--dotted-outline);
+    outline-color: #fff;
+}
+
+.program-icon-container {
+    display: inline-block;
+    vertical-align: bottom;
+    position: relative;
+    pointer-events: none;
+}
+
+.program-icon-active-effect {
+    display: none;
+}
+
+.program.active .program-icon-active-effect {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-32px);
+    filter: drop-shadow(32px 0 0 var(--dialog-blue));
+    clip-path: polygon(100% 0, 200% 0, 200% 100%, 100% 100%);
+    opacity: 0.5;
+}
+
+.program-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    pointer-events: none;
+    line-height: 13px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 8pt;
+    font-size: 11.5px;
+    color: #fff;
+}

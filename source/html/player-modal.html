@@ -1,0 +1,363 @@
+<article class="window player-modal">
+    <style>
+        .player-modal [role=tabpanel] {
+            width: 450px;
+        }
+
+        .player-modal [role=tabpanel] pre,
+        .player-modal [role=tabpanel] ul.tree-view {
+            height: 250px;
+        }
+
+        .done {
+            color: #36c675 !important;
+        }
+
+        .done.challenge {
+            color: #a800a8 !important;
+        }
+    </style>
+    <div class="title-bar">
+        <div class="title-bar-text"></div>
+        <div class="title-bar-controls">
+            <button aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="window-body">
+        <menu class="justified" role="tablist">
+            <li role="tab" aria-selected="true" aria-controls="stats">Stats</li>
+            <li role="tab" aria-controls="adv-story">Story</li>
+            <li role="tab" aria-controls="adv-nether">Nether</li>
+            <li role="tab" aria-controls="adv-end">The End</li>
+            <li role="tab" aria-controls="adv-adventure">Adventure</li>
+            <li role="tab" aria-controls="adv-husbandry">Husbandry</li>
+        </menu>
+        <div id="stats" role="tabpanel"><pre class="scrollable-y">Loading...</pre></div>
+        <div id="adv-story" role="tabpanel" hidden>
+            <ul class="tree-view scrollable">
+                <li id="story-root">Minecraft
+                    <ul>
+                        <li id="story-mine_stone">Stone Age
+                            <ul>
+                                <li id="story-upgrade_tools"> Getting an Upgrade
+                                    <ul>
+                                        <li id="story-smelt_iron">Acquire Hardware
+                                            <ul>
+                                                <li id="story-obtain_armor">Suit Up
+                                                    <ul>
+                                                        <li id="story-deflect_arrow">Not Today, Thank You</li>
+                                                    </ul>
+                                                </li>
+                                                <li id="story-lava_bucket">Hot Stuff
+                                                    <ul>
+                                                        <li id="story-form_obsidian">Ice Bucket Challenge
+                                                            <ul>
+                                                                <li id="story-enter_the_nether">We Need to Go Deeper
+                                                                    <ul>
+                                                                        <li id="story-cure_zombie_villager">Zombie Doctor</li>
+                                                                        <li id="story-follow_ender_eye">Eye Spy
+                                                                            <ul>
+                                                                                <li id="story-enter_the_end">The End?</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li id="story-iron_tools">Isn't It Iron Pick
+                                                    <ul>
+                                                        <li id="story-mine_diamond">Diamonds!
+                                                            <ul>
+                                                                <li id="story-shiny_gear">Cover Me with Diamonds</li>
+                                                                <li id="story-enchant_item">Enchanter</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="adv-nether" role="tabpanel" hidden>
+            <ul class="tree-view scrollable">
+                <li id="nether-root">Nether
+                    <ul>
+                        <li class="challenge" id="nether-return_to_sender">Return to Sender
+                            <ul>
+                                <li class="challenge" id="nether-uneasy_alliance">Uneasy Alliance</li>
+                            </ul>
+                        </li>
+                        <li id="nether-find_bastion">Those Were the Days
+                            <ul>
+                                <li id="nether-loot_bastion">War Pigs</li>
+                            </ul>
+                        </li>
+                        <li id="nether-obtain_ancient_debris">Hidden in the Depths
+                            <ul>
+                                <li id="nether-use_lodestone">Country Lode, Take Me Home</li>
+                                <li class="challenge" id="nether-netherite_armor">Cover Me in Debris</li>
+                            </ul>
+                        </li>
+                        <li class="challenge" id="nether-fast_travel">Subspace Bubble</li>
+                        <li id="nether-find_fortress">A Terrible Fortress
+                            <ul>
+                                <li id="nether-get_wither_skull">Spooky Scary Skeleton
+                                    <ul>
+                                        <li id="nether-summon_wither">Withering Heights
+                                            <ul>
+                                                <li id="nether-create_beacon">Bring Home the Beacon
+                                                    <ul>
+                                                        <li id="nether-create_full_beacon">Beaconator</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="nether-obtain_blaze_rod">Into Fire
+                                    <ul>
+                                        <li id="nether-brew_potion">Local Brewery
+                                            <ul>
+                                                <li class="challenge" id="nether-all_potions">A Furious Cocktail
+                                                    <ul>
+                                                        <li class="challenge" id="nether-all_effects">How Did We Get Here?</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="nether-obtain_crying_obsidian">Who is Cutting Onions?
+                            <ul>
+                                <li id="nether-charge_respawn_anchor">Not Quite "Nine" Lives</li>
+                            </ul>
+                        </li>
+                        <li id="nether-distract_piglin">Oh Shiny</li>
+                        <li id="nether-ride_strider">This Boat Has Legs
+                            <ul>
+                                <li id="nether-ride_strider_in_overworld_lava">Feels Like Home</li>
+                                <li class="tooltip challenge" id="nether-explore_nether">Hot Tourist Destinations
+                                    <p class="tooltip-text"></p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="adv-end" role="tabpanel" hidden>
+            <ul class="tree-view scrollable">
+                <li id="end-root">The End
+                    <ul>
+                        <li id="end-kill_dragon">Free the End
+                            <ul>
+                                <li id="end-dragon_egg">The Next Generation</li>
+                                <li id="end-enter_end_gateway">Remote Gateway
+                                    <ul>
+                                        <li id="end-find_end_city">The City at the End of the Game
+                                            <ul>
+                                                <li id="end-elytra">Sky's the Limit</li>
+                                                <li class="challenge" id="end-levitate">Great View From Up Here</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="end-respawn_dragon">The End... Again...</li>
+                                <li id="end-dragon_breath">You Need a Mint</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="adv-adventure" role="tabpanel" hidden>
+            <ul class="tree-view scrollable">
+                <li id="adventure-root">Adventure
+                    <ul>
+                        <li id="adventure-brush_armadillo">Isn't It Scute?</li>
+                        <li id="adventure-sleep_in_bed">Sweet Dreams
+                            <ul>
+                                <li id="adventure-walk_on_powder_snow_with_leather_boots">Light as a Rabbit</li>
+                                <li class="tooltip challenge" id="adventure-adventuring_time">Adventuring Time
+                                    <p class="tooltip-text"></p>
+                                </li>
+                                <li id="adventure-play_jukebox_in_meadows">Sound of Music</li>
+                            </ul>
+                        </li>
+                        <li id="adventure-ol_betsy">Ol' Betsy
+                            <ul>
+                                <li class="challenge" id="adventure-two_birds_one_arrow">Two Birds, One Arrow</li>
+                                <li id="adventure-whos_the_pillager_now">Who's the Pillager Now?</li>
+                                <li class="challenge" id="adventure-arbalistic">Arbalistic</li>
+                            </ul>
+                        </li>
+                        <li id="adventure-avoid_vibration">Sneak 100</li>
+                        <li id="adventure-trim_with_any_armor_pattern">Crafting a New Look
+                            <ul>
+                                <li class="tooltip challenge" id="adventure-trim_with_all_exclusive_armor_patterns">Smithing with Style
+                                    <p class="tooltip-text"></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="adventure-lightning_rod_with_villager_no_fire">Surge Protector</li>
+                        <li id="adventure-spyglass_at_parrot">Is It a Bird?
+                            <ul>
+                                <li id="adventure-spyglass_at_ghast">Is It a Balloon?
+                                    <ul>
+                                        <li id="adventure-spyglass_at_dragon">Is It a Plane?</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="adventure-voluntary_exile">Voluntary Exile
+                            <ul>
+                                <li class="challenge" id="adventure-hero_of_the_village">Hero of the Village</li>
+                            </ul>
+                        </li>
+                        <li id="adventure-crafters_crafting_crafters">Crafters Crafting Crafters</li>
+                        <li id="adventure-salvage_sherd">Respecting the Remnants
+                            <ul>
+                                <li id="adventure-craft_decorated_pot_using_only_sherds">Careful Restoration</li>
+                            </ul>
+                        </li>
+                        <li id="adventure-minecraft_trials_edition">Minecraft: Trial(s) Edition
+                            <ul>
+                                <li id="adventure-who_needs_rockets">Who Needs Rockets?</li>
+                                <li id="adventure-lighten_up">Lighten Up</li>
+                                <li id="adventure-blowback">Blowback</li>
+                                <li id="adventure-under_lock_and_key">Under Lock and Key
+                                    <ul>
+                                        <li id="adventure-revaulting">Revaulting</li>
+                                    </ul>
+                                </li>
+                                <li id="adventure-overoverkill">Over-Overkill</li>
+                            </ul>
+                        </li>
+                        <li id="adventure-trade">What a Deal!
+                            <ul>
+                                <li id="adventure-trade_at_world_height">Star Trader</li>
+                                <li id="adventure-summon_iron_golem">Hired Help</li>
+                            </ul>
+                        </li>
+                        <li id="adventure-read_power_of_chiseled_bookshelf">The Power of Books</li>
+                        <li id="adventure-fall_from_world_height">Caves &amp; Cliffs</li>
+                        <li id="adventure-kill_a_mob">Monster Hunter
+                            <ul>
+                                <li class="challenge" id="adventure-kill_mob_near_sculk_catalyst">It Spreads</li>
+                                <li id="adventure-totem_of_undying">Postmortal</li>
+                                <li class="tooltip challenge" id="adventure-kill_all_mobs">Monsters Hunted
+                                    <p class="tooltip-text"></p>
+                                </li>
+                                <li id="adventure-throw_trident">A Throwaway Joke
+                                    <ul>
+                                        <li id="adventure-very_very_frightening">Very Very Frightening</li>
+                                    </ul>
+                                </li>
+                                <li id="adventure-shoot_arrow">Take Aim
+                                    <ul>
+                                        <li class="challenge" id="adventure-bullseye">Bullseye</li>
+                                        <li class="challenge" id="adventure-sniper_duel">Sniper Duel</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="adventure-honey_block_slide">Sticky Situation</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="adv-husbandry" role="tabpanel" hidden>
+            <ul class="tree-view scrollable">
+                <li id="husbandry-root">Husbandry
+                    <ul>
+                        <li id="husbandry-tadpole_in_a_bucket">Bukkit Bukkit
+                            <ul>
+                                <li id="husbandry-leash_all_frog_variants">When the Squad Hops into Town
+                                    <ul>
+                                        <li class="challenge" id="husbandry-froglight">With Our Powers Combined!</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="husbandry-silk_touch_nest">Total Beelocation</li>
+                        <li id="husbandry-breed_an_animal">The Parrots and the Bats
+                            <ul>
+                                <li class="tooltip challenge" id="husbandry-bred_all_animals">Two by Two
+                                    <p class="tooltip-text"></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="husbandry-make_a_sign_glow">Glow and Behold!</li>
+                        <li id="husbandry-ride_a_boat_with_a_goat">Whatever Floats Your Goat!</li>
+                        <li id="husbandry-tame_an_animal">Best Friends Forever
+                            <ul>
+                                <li class="tooltip challenge" id="husbandry-complete_catalogue">A Complete Catalogue
+                                    <p class="tooltip-text"></p>
+                                </li>
+                                <li id="husbandry-remove_wolf_armor">Shear Brilliance</li>
+                                <li id="husbandry-repair_wolf_armor">Good as New</li>
+                                <li class="tooltip challenge" id="husbandry-whole_pack">The Whole Pack
+                                    <p class="tooltip-text"></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="husbandry-obtain_sniffer_egg">Smells Interesting
+                            <ul>
+                                <li id="husbandry-feed_snifflet">Little Sniffs
+                                    <ul>
+                                        <li id="husbandry-plant_any_sniffer_seed">Planting the Past</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="husbandry-plant_seed">A Seedy Place
+                            <ul>
+                                <li class="challenge" id="husbandry-obtain_netherite_hoe">Serious Dedication</li>
+                                <li class="tooltip challenge" id="husbandry-balanced_diet">A Balanced Diet
+                                    <p class="tooltip-text"></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="husbandry-safely_harvest_honey">Bee Our Guest
+                            <ul>
+                                <li id="husbandry-wax_on">Wax On
+                                    <ul>
+                                        <li id="husbandry-wax_off">Wax Off</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="husbandry-allay_deliver_item_to_player">You've Got a Friend in Me
+                            <ul>
+                                <li id="husbandry-allay_deliver_cake_to_note_block">Birthday Song</li>
+                            </ul>
+                        </li>
+                        <li id="husbandry-fishy_business">Fishy Business
+                            <ul>
+                                <li id="husbandry-tactical_fishing">Tactical Fishing
+                                    <ul>
+                                        <li id="husbandry-axolotl_in_a_bucket">The Cutest Predator
+                                            <ul>
+                                                <li id="husbandry-kill_axolotl_target">The Healing Power of Friendship!</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</article>

@@ -1,0 +1,153 @@
+{
+    "Austin Dawn": {
+        "school": "ice",
+        "level": 149,
+        "stats": {
+            "health": 9638,
+            "mana": 537,
+            "damage": 123,
+            "resist": 71,
+            "accuracy": 21,
+            "critical": 460,
+            "block": 255,
+            "pierce": 8,
+            "pip": 104
+        },
+        "gear": {
+            "hat": "Krokopatra Blizzard Fez",
+            "robe": "Bonesmasher Robe of Cold",
+            "boots": "Dragoon's Icy Boots",
+            "wand": "Frostbound Sword and Shield",
+            "athame": "Wolf's Lancet of Shivers",
+            "amulet": "Wunderbar Wonderneer Rope",
+            "ring": "Alpha and Omega Ring",
+            "deck": "Director Cryo Box",
+            "mount": "Clockwork Courser"
+        },
+        "pet": {
+            "body": "snow beast",
+            "talents": ["ice-giver", "pain-giver", "ice-dealer", "spell-proof", "mighty"],
+            "socket": ["spell-defying", "brace for impact"]
+        }
+    },
+    "Austin Knight": {
+        "school": "storm",
+        "level": 141,
+        "stats": {
+            "health": 6417,
+            "mana": 547,
+            "damage": 177,
+            "resist": 46,
+            "accuracy": 51,
+            "critical": 570,
+            "block": 81,
+            "pierce": 5,
+            "pip": 104
+        },
+        "gear": {
+            "hat": "Dragoon's Shocking Helm",
+            "robe": "Malistaire's Cloak of Flux",
+            "boots": "Dragoon's Shocking Boots",
+            "wand": "Fossil Warrior's Skullcrusher (Level 130+)",
+            "athame": "Aphrodite's Storm of Thorns",
+            "amulet": "Dragoon's Shocking Charm",
+            "ring": "NightOrb's Ring of Havoc",
+            "deck": "Deck of the Prowling Wolf",
+            "mount": "New Fangle"
+        },
+        "pet": {
+            "body": "scaly frillasaur",
+            "talents": ["pain-giver", "spell-proof", "spell-defying", "mighty", "storm-dealer"],
+            "socket": ["storm-giver"]
+        }
+    },
+    "Austin Shade": {
+        "school": "death",
+        "level": 113,
+        "stats": {
+            "health": 6047,
+            "mana": 542,
+            "damage": 129,
+            "resist": 49,
+            "accuracy": 21,
+            "critical": 364,
+            "block": 144,
+            "pierce": 10,
+            "pip": 96
+        },
+        "gear": {
+            "hat": "Hangman's Hood",
+            "robe": "Bonesmasher Robe of Strife",
+            "boots": "Dworgyn's Dire Boots",
+            "wand": "Goth Fairy Kei Umbrella (Level 100+)",
+            "athame": "Blade of the Felled Titan",
+            "amulet": "Deadly August Sage Ampul (Level 110+)",
+            "ring": "Ghost Dog's Samoorai Band",
+            "deck": "Deadly August Sage Deck (Level 110+)",
+            "mount": "Scarasol"
+        },
+        "pet": {
+            "body": "dark hound",
+            "talents": ["pain-bringer", "pain-giver", "spell-proof", "death-dealer", "mighty"],
+            "socket": ["death-giver"]
+        }
+    },
+    "Austin Dream": {
+        "school": "myth",
+        "level": 38,
+        "stats": {
+            "health": 1912,
+            "mana": 161,
+            "damage": 57,
+            "resist": 17,
+            "accuracy": 10,
+            "critical": 0,
+            "block": 0,
+            "pierce": 0,
+            "pip": 54
+        },
+        "gear": {
+            "hat": "Helmet of Zeus' Will",
+            "robe": "Senator's Poetic Toga",
+            "boots": "Boots of Zeus' Lore",
+            "wand": "Sky Iron Hasta",
+            "athame": "Vernal Shears",
+            "amulet": "Swiftarrow's Necklace",
+            "ring": "Ring of the Fount",
+            "deck": "Deck of the Cyclops",
+            "mount": "Swift Gryphon"
+        },
+        "pet": {
+            "body": "plucky gryphon",
+            "talents": ["myth-giver", "pain-giver", "spell-proof", "spell-defying", "myth-dealer"],
+            "socket": ["go humongo"]
+        }
+    },
+    "Willow Wisp": {
+        "school": "life",
+        "level": 40,
+        "stats": {
+            "health": 2270,
+            "mana": 131,
+            "damage": 33,
+            "resist": 0,
+            "accuracy": 0,
+            "critical": 0,
+            "block": 0,
+            "pierce": 0,
+            "pip": 63
+        },
+        "gear": {
+            "hat": "Youkai's Headwraps of Intent",
+            "robe": "Jade Oni's Vestment",
+            "boots": "Youkai's Shoes",
+            "wand": "Sky Iron Hasta",
+            "athame": "Nomoonaga's Kris of Hope",
+            "amulet": "Spirit's Flowering Choker",
+            "ring": "Ring of the Fount",
+            "deck": "Clanker's Deck of Mending",
+            "mount": "Rubber Ducky"
+        },
+        "pet": null
+    }
+}
