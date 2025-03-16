@@ -9,10 +9,12 @@
     --dialog-blue: #000080;
     --dialog-gray: #808080;
 
-    --font-size: 0.6875em;
+    --font-size-11: 0.6875rem;
+    --font-size-12: 0.75rem;
 
     /* Spacing */
     --element-spacing: 8px;
+    --grouped-element-spacing: 6px;
 
     /* Borders */
     --border-width: 1px;
@@ -65,7 +67,7 @@
     font-style: normal;
 }
 
-body {
+html, body {
     font-family: Arial;
     color: var(--text-color);
 }
@@ -83,19 +85,22 @@ ul.menu,
 li[role=tab],
 [role=tabpanel] {
     font-family: 'W95font', Arial;
-    -webkit-font-smoothing: none;
-    font-size: 12px;
+    /* -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    font-smooth: none; */
+    font-size: var(--font-size-12);
 }
 
 u {
-    text-decoration: none;
-    border-bottom: 0.5px solid var(--text-color);
+    text-decoration: underline;
+    text-underline-position: under;
+    /* border-bottom: 0.5px solid var(--text-color); */
 }
 
 button,
 input[type="submit"],
 input[type="reset"] {
-    font-size: 11px;
+    font-size: var(--font-size-11);
     box-sizing: border-box;
     border: none;
     color: transparent;
@@ -219,6 +224,13 @@ input[type="reset"]:disabled,
     background-position: bottom 3px left 4px;
 }
 
+.title-bar-controls button[aria-label="Minimize"]:disabled,
+.title-bar-controls button[aria-label].minimize:disabled {
+    background-image: url("../svg/minimize-disabled.svg");
+    background-repeat: no-repeat;
+    background-position: bottom 3px left 4px;
+}
+
 .title-bar-controls button[aria-label="Maximize"],
 .title-bar-controls button[aria-label].maximize {
     background-image: url("../svg/maximize.svg");
@@ -274,6 +286,28 @@ fieldset {
 
 legend {
     background: var(--surface);
+}
+
+.field-row {
+    display: flex;
+    align-items: center;
+}
+
+[class^="field-row"] + [class^="field-row"] {
+    margin-top: var(--grouped-element-spacing);
+}
+
+.field-row > * + * {
+    margin-left: var(--grouped-element-spacing);
+}
+
+.field-row-stacked {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-row-stacked * + * {
+    margin-top: var(--grouped-element-spacing);
 }
 
 .status-bar {
@@ -406,7 +440,76 @@ select:active {
     background-image: url("./icon/button-down-active.svg");
 }
 
-pre {
+.combo-box > ul > li.selected {
+
+}
+
+.combo-box.drop-down {
+    position: relative;
+    box-shadow: var(--border-field);
+    display: flex;
+    padding: 2px;
+}
+
+.combo-box.drop-down > input {
+    flex: 1;
+    box-shadow: none;
+}
+
+.combo-box.drop-down > button {
+    width: 19.5px;
+    height: 21px;
+    background-image: url("../svg/button-down.svg");
+    background-color: var(--button-highlight);
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    min-width: unset;
+    min-height: unset;
+    box-shadow: none;
+    padding: 0;
+}
+
+.combo-box.drop-down > button:focus {
+    outline: none;
+    outline-offset: 0;
+}
+
+.combo-box.drop-down > button:active {
+    background-image: url("../svg/button-down-active.svg");
+    box-shadow: none;
+}
+
+.combo-box.drop-down > ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--button-highlight);
+    padding: 0;
+    list-style: none;
+    border: 1px solid #000;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.combo-box.drop-down > button:focus ~ ul {
+    display: block;
+}
+
+.combo-box.drop-down > ul > li {
+    padding: 0 4px;
+    color: var(--text-color);
+    background-color: var(--button-highlight);
+}
+
+.combo-box.drop-down > ul > li:hover {
+    color: var(--button-highlight);
+    background-color: var(--dialog-blue);
+}
+
+section {
     display: block;
     white-space: normal;
     background: var(--button-highlight);
@@ -583,10 +686,12 @@ ul.menu li:not(.divider)[aria-haspopup="true"] ul.menu li:hover u {
 
 ul.menu li.disabled {
     color: var(--dialog-gray);
+    text-shadow: 1px 1px 0 var(--button-highlight);
 }
 
 ul.menu li.disabled u {
     border-bottom-color: var(--dialog-gray);
+    text-shadow: 1px 1px 0 var(--button-highlight);
 }
 
 ul.menu li.divider {

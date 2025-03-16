@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>cales.casa</title>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href=" {{ url_for('static', filename='ico/favicon.ico') }} ">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/95.css') }} ">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='css/style.css') }} ">
+    {% block style %}{% endblock %}
+</head>
+<body>
+    <main class="desktop">
+        <div class="window" id="root">
+            <header class="title-bar">
+                <span class="title-bar-text">
+                    {% block title_bar_icon %}
+                        <img class="title-bar-icon" src=" {{ url_for('static', filename='ico/small/web_document.webp') }} " alt="Web Document" width="16" height="16">
+                    {% endblock %}
+                    {% block title_bar_text %} cales.casa - Microsoft Internet Explorer {% endblock %}
+                </span>
+                <div class="title-bar-controls">
+                    {% block title_bar_controls %}
+                        <button aria-label="Minimize" disabled></button>
+                        <button aria-label="Maximize" disabled></button>
+                        <button aria-label="Close" disabled></button>
+                    {% endblock %}
+                </div>
+            </header>
+            <div class="window-body frame">
+                <div class="menu-bar">
+                    <div class="menu-bar-item">
+                        <button aria-label="File"><u>F</u>ile</button>
+                        <ul class="menu">
+                            <li class="disabled"><u>N</u>ew Window<span>Ctrl+N</span></li>
+                            <li class="disabled"><u>O</u>pen<span>Ctrl+O</span></li>
+                            <li class="disabled"><u>S</u>ave<span>Ctrl+S</span></li>
+                            <li class="disabled">Save <u>A</u>s File...</li>
+                            <li class="divider"></li>
+                            <li class="disabled">New <u>M</u>essage...</li>
+                            <li class="disabled">Send <u>T</u>o</li>
+                            <li class="divider"></li>
+                            <li class="disabled">Page Set<u>u</u>p...</li>
+                            <li onclick="window.print()"><u>P</u>rint...<span>Ctrl+P</span></li>
+                            <li class="divider"></li>
+                            <li class="disabled">Cr<u>e</u>ate Shortcut</li>
+                            <li class="disabled">P<u>r</u>operties</li>
+                            <li class="divider"></li>
+                            <li><u>C</u>lose</li>
+                        </ul>
+                    </div>
+                    <div class="menu-bar-item">
+                        <button aria-label="Edit"><u>E</u>dit</button>
+                        <ul class="menu">
+                            <li class="disabled">Cu<u>t</u><span>Ctrl+X</span></li>
+                            <li class="disabled"><u>C</u>opy<span>Ctrl+C</span></li>
+                            <li><u>P</u>aste<span>Ctrl+V</span></li>
+                            <li class="divider"></li>
+                            <li>Select <u>A</u>ll<span>Ctrl+A</span></li>
+                            <li class="divider"></li>
+                            <li><u>F</u>ind (on this page)...<span>Ctrl+F</span></li>
+                        </ul>
+                    </div>
+                    <div class="menu-bar-item">
+                        <button aria-label="View"><u>V</u>iew</button>
+                        <ul class="menu">
+                            <li><u>T</u>oolbar</li>
+                            <li>Status <u>B</u>ar</li>
+                            <li class="divider"></li>
+                            <li aria-haspopup="true">
+                                Fo<u>n</u>ts
+                                <ul class="menu">
+                                    <li>La<u>r</u>gest</li>
+                                    <li><u>L</u>arge</li>
+                                    <li><u>M</u>edium</li>
+                                    <li><u>S</u>mall</li>
+                                    <li>Sm<u>a</u>llest</li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="disabled">Sto<u>p</u><span>Esc</span></li>
+                            <li><u>R</u>efresh<span>F5</span></li>
+                            <li class="divider"></li>
+                            <li>Sour<u>c</u>e</li>
+                            <li class="divider"></li>
+                            <li class="disabled"><u>O</u>ptions...</li>
+                        </ul>
+                    </div>
+                    <div class="menu-bar-item">
+                        <button aria-label="Go"><u>G</u>o</button>
+                        <ul class="menu">
+                            <li class="disabled"><u>B</u>ack<span>Alt+Left Arrow</span></li>
+                            <li class="disabled"><u>F</u>orward<span>Alt+Right Arrow</span></li>
+                            <li class="divider"></li>
+                            <li onclick="window.location.href = '/'"><u>S</u>tart Page</li>
+                            <li class="disabled">Search the <u>W</u>eb</li>
+                            <li class="disabled">B<u>e</u>st of the Web</li>
+                            <li class="divider"></li>
+                            <li class="disabled">Read <u>M</u>ail</li>
+                            <li class="disabled">Read <u>N</u>ews</li>
+                            <li class="divider"></li>
+                            <li class="disabled">Open <u>H</u>istory Folder</li>
+                        </ul>
+                    </div>
+                    <div class="menu-bar-item">
+                        <button aria-label="Favorites">F<u>a</u>vorites</button>
+                        <ul class="menu">
+                            <li class="disabled"><u>A</u>dd To Favorites...</li>
+                            <li class="disabled"><u>O</u>rganize Favorites...</li>
+                        </ul>
+                    </div>
+                    <div class="menu-bar-item">
+                        <button aria-label="Help"><u>H</u>elp</button>
+                        <ul class="menu">
+                            <li><u>H</u>elp Topics</li>
+                            <li class="disabled">Web <u>T</u>utorial</li>
+                            <li class="divider"></li>
+                            <li><u>A</u>bout cales.casa</li>
+                        </ul>
+                    </div>
+                </div>
+                <fieldset class="toolbar bitmap">
+                    <div class="toolbar-controls">
+                        <button aria-label="Back" disabled>
+                            <span>Back</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button aria-label="Forward" disabled>
+                            <span>Forward</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button aria-label="Stop">
+                            <span>Stop</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button aria-label="Refresh">
+                            <span>Refresh</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button aria-label="Home">
+                            <span>Home</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button aria-label="Search">
+                            <span>Search</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button aria-label="Favorites">
+                            <span>Favorites</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button aria-label="Print">
+                            <span>Print</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button aria-label="Font">
+                            <span>Font</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button aria-label="Mail">
+                            <span>Mail</span>
+                            <div class="icon"></div>
+                        </button>
+                    </div>
+                    <fieldset class="animated-ie3">
+                        <div class="icon"></div>
+                    </fieldset>
+                    <fieldset class="address-bar field-row">
+                        <p>Address</p>
+                        <div class="combo-box drop-down">
+                            <input type="text">
+                            <button type="button"></button>
+                            <ul>
+                                <li>{{ url_for('main.index') }}</li>
+                            </ul>
+                        </div>
+                    </fieldset>
+                    <div>
+                        <p>Links</p>
+                    </div>
+                </fieldset>
+                {% block window_body %}{% endblock %}
+            </div>
+        </div>
+        <header class="taskbar">
+            <button id="taskbar__start">Start</button>
+            <div class="status-bar">
+                <div class="status-bar-field" id="taskbar__status">
+                    <p id="taskbar__time"></p>
+                </div>
+            </div>
+        </header>
+    </main>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const ie3 = document.querySelector('.animated-ie3');
+            const classes = ["nscape", "nscape-mozilla", "win95"];
+            let currentIndex = 0;
+
+            ie3.addEventListener("click", () => {
+                ie3.classList.remove(...classes);
+
+                currentIndex = (currentIndex + 1) % (classes.length + 1);
+                if (currentIndex > 0) ie3.classList.add(classes[currentIndex - 1]);
+            });
+        });
+    </script>
+</body>
+</html>

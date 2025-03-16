@@ -1,0 +1,347 @@
+:root {
+    --background: #008080;
+
+    --sprite-width: -525px; /* Default for ie3 */
+}
+
+@media print {
+    .desktop,
+    .window,
+    .window-body {
+        all: unset !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        background: none !important;
+        box-shadow: none !important;
+    }
+
+    .menu-bar,
+    .title-bar,
+    .taskbar,
+    .window:has(.title-bar.inactive) {
+        display: none !important;
+    }
+
+    .window-body pre {
+        box-shadow: none !important;
+    }
+}
+
+* {
+    image-rendering: pixelated;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .window {
+        width: 100%;
+        height: 100%;
+        position: unset !important;
+        top: unset !important;
+        left: unset !important;
+        min-width: unset !important;
+        transform: unset !important;
+    }
+
+    .window-body {
+        height: 100%;
+    }
+
+    .window-body pre {
+        height: 100%;
+    }
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+}
+/* 
+body::after {
+    position: fixed;
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(transparent 50%, #fff 50%),
+    linear-gradient(90deg, red, red 33%, #0f0 33%, #0f0 66%, #00f 66%);
+    background-size: 100% 3px, 3px 3px;
+    pointer-events: none;
+    opacity: .06;
+    z-index: 90;
+} */
+
+@font-face {
+    font-family: 'W95font';
+    src: url('../fonts/w95font.woff') format('woff');
+    src: url('../fonts/w95font.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'W95font';
+    src: url('../fonts/w95font-bold.woff') format('woff');
+    src: url('../fonts/w95font-bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.desktop {
+    background: var(--background);
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    height: 100%;
+}
+
+.taskbar {
+    background: var(--surface);
+    box-shadow: inset 1px 1px #fff;
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    /* position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    font-size: 12px;
+    width: 100%;
+    align-self: end;
+}
+
+#taskbar-start {
+    font-weight: bold;
+    min-width: auto;
+    padding: 0 6px;
+}
+
+#taskbar-start-icon {
+    vertical-align: bottom;
+}
+
+#taskbar-time {
+    margin: 0;
+    padding: 2px 10px;
+}
+
+.content,
+.taskbar {
+    font-family: 'W95font', 'Arial';
+}
+
+.window {
+    z-index: 2;
+}
+
+.window:has(.title-bar.active) {
+    z-index: 3;
+}
+
+.taskbar {
+    z-index: 4;
+}
+
+.taskbar,
+.title-bar,
+.menu-bar,
+[role=tablist] {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.window#root {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 67.5%;
+    min-width: max-content;
+    transform: translate(-50%, -50%); */
+    width: 99%;
+    height: 98%;
+    align-self: center;
+    /* z-index: 2; */
+}
+
+.title-bar-icon {
+    vertical-align: bottom;
+}
+
+.scrollable {
+    overflow: auto;
+}
+
+section {
+    text-align: center;
+}
+
+[role=tabpanel] section {
+    text-align: left;
+}
+
+.toolbar {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-columns: auto 1fr auto;
+    padding: 0;
+}
+
+.toolbar.bitmap {
+    background: url('../img/btmp.webp');
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    image-rendering: smooth;
+}
+
+.toolbar-controls {
+    display: flex;
+    overflow: hidden;
+    grid-column: 1 / span 2;
+    margin: 2px;
+
+    margin: 2px 2px 0 2px;
+}
+
+.toolbar-controls > button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    box-shadow: none;
+    min-width: unset;
+    position: relative;
+    width: 48px;
+    height: auto;
+    padding: 0;
+}
+
+.toolbar-controls > button > .icon {
+    width: 20px;
+    height: 20px;
+    background-image: url('../ico/toolbar-icons-grayscale.webp');
+    background-repeat: no-repeat;
+
+    position: absolute;
+    top: 4px;
+}
+
+.toolbar-controls > button > span {
+    margin-top: 26px;
+    padding-bottom: 4px;
+}
+
+.toolbar-controls > button:not(:disabled):hover {
+    box-shadow: var(--border-raised-outer), var(--border-raised-inner);
+}
+
+.toolbar-controls > button:not(:disabled):active {
+    box-shadow: var(--border-sunken-outer), var(--border-sunken-inner);
+    text-shadow: 1px 1px var(--text-color);
+}
+
+.toolbar-controls > button:not(:disabled):not(:hover) {
+    box-shadow: none;
+    text-shadow: 0 0 var(--text-color);
+}
+
+.toolbar-controls > button:not(:disabled):hover > .icon {
+    background-image: url('../ico/toolbar-icons.webp');
+}
+
+.toolbar-controls > button[aria-label="Back"] > .icon { background-position: 0 0; }
+.toolbar-controls > button[aria-label="Forward"] > .icon { background-position: -20px 0; }
+.toolbar-controls > button[aria-label="Stop"] > .icon { background-position: -40px 0; }
+.toolbar-controls > button[aria-label="Refresh"] > .icon { background-position: -60px 0; }
+.toolbar-controls > button[aria-label="Home"] > .icon { background-position: -80px 0; }
+.toolbar-controls > button[aria-label="Search"] > .icon { background-position: -100px 0; }
+.toolbar-controls > button[aria-label="Favorites"] > .icon { background-position: -120px 0; }
+.toolbar-controls > button[aria-label="Print"] > .icon { background-position: -140px 0; }
+.toolbar-controls > button[aria-label="Font"] > .icon { background-position: -160px 0; }
+.toolbar-controls > button[aria-label="Mail"] > .icon { background-position: -180px 0; }
+
+.toolbar-controls > button[aria-label="Back"]:disabled > .icon,
+.toolbar-controls > button[aria-label="Forward"]:disabled > .icon {
+    background-image: url('../ico/toolbar-icons-disabled.webp');
+}
+
+.toolbar-controls > button:focus {
+    outline: none;
+}
+
+.animated-ie3 {
+    height: 100%;
+    justify-self: end;
+    display: flex;
+    aspect-ratio: 1;
+    padding: 0 0 2px 2px;
+    margin: 2px 2px 0 -2px;
+    box-shadow: inset -0px -1px var(--button-highlight), 
+        inset 1px -2px var(--button-shadow), 
+        inset 2px 0px var(--button-highlight);
+}
+
+@keyframes sprite-animation {
+    from { background-position: 0; }
+    to { background-position: var(--sprite-width); }
+}
+
+.animated-ie3 > .icon {
+    width: 25px;
+    height: 25px;
+    background-image: url('../ico/ie3.webp');
+    background-repeat: no-repeat;
+    animation: sprite-animation 4s steps(21) infinite;
+    animation-play-state: paused;
+
+    transform: scale(1.73);
+    transform-origin: 0 0;
+}
+
+.animated-ie3.nscape-mozilla > .icon {
+    --sprite-width: -1050px;
+    background-image: url('../ico/nscape-mozilla.webp');
+    animation-timing-function: steps(42);
+}
+
+.animated-ie3.nscape > .icon {
+    --sprite-width: -1025px;
+    background-image: url('../ico/nscape.webp');
+    animation-timing-function: steps(41);
+}
+
+.animated-ie3.win95 > .icon {
+    --sprite-width: -425px;
+    background-image: url('../ico/win95.webp');
+    animation-timing-function: steps(17);
+}
+
+.animated-ie3 > .icon:hover {
+    animation-play-state: running; 
+}
+
+.animated-ie3 > .icon:not(:hover) {
+    background-position: -25px 0;
+}
+
+.address-bar {
+    grid-column: 1 / span 2;
+}
+
+.address-bar > .combo-box-drop-down {
+    width: 100%;
+}
+
+.address-bar p {
+    margin: 0;
+}

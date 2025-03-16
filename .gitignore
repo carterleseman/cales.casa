@@ -1,0 +1,14 @@
+# Virtual environment
+venv/
+
+tmp*
+*.env
+instance/
+*.db
+*.txt
+
+!schema.txt
+!requirements.txt
+
+# Pycache directories
+__pycache__/

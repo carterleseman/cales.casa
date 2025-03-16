@@ -1,0 +1,41 @@
+{% extends 'default.html' %}
+
+{% block style %}
+    <style>
+        :root {
+            --gray: #a4a4a4;
+            --green: #36c675;
+            --red: #c63b36;
+        }
+
+        .mc-server {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mc-server img {
+            width: 64px;
+            height: auto;
+            rotate: y 180deg;
+        }
+
+        .mc-server-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .mc-server-details p {
+            margin: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block title_bar_text %} cales.casa (Minecraft Server) - Microsoft Internet Explorer {% endblock %}
+
+{% block window_body %}
+    <!-- <section></section> -->
+{% endblock %}
